@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}Accueil | Jeu du pendu{% endblock %}
+
+{% block content %}
+<div class="bloc-princip">
+    <div class="rectangle">
+        <h3>Le jeu du pendu</h3>
+        <div class="pancarte"><p>Ce jeu est issu d'un exercice du DAEU B.<br>Dans le cadre du cours de programmation. <br> Par conséquent, des bugs peuvent être présents. <br><br>Bon jeu à vous !</p> </p></div>
+    
+        <div class="formulaire">
+            <form action="/play" method="post">
+                <input type="text" class="inpt-image" placeholder="Pseudo..." id="pseudo" name="pseudo" required minlength="4" maxlength="12"/>
+                <button type ="submit" class="btn-image">Jouer !</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>for (let i = 0; i < 50; i++) {
+    let etoile = document.createElement("div");
+    etoile.textContent = "✦";
+    etoile.style.position = "absolute";
+    etoile.style.top = Math.random() * 100 + "%";
+    etoile.style.left = Math.random() * 100 + "%";
+    etoile.style.color = "#FFB000";
+    etoile.style.fontSize = Math.random() * 20 + 10 + "px";
+    etoile.style.zIndex = "-1";
+    document.body.appendChild(etoile);
+}</script>
+{% endblock %}
